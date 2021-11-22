@@ -1,0 +1,8 @@
+{
+  "engine": "cocos-creator-js",
+  "packages": "packages",
+  "name": "SquareGame",
+  "id": "cd26feb3-7771-4fcb-8f05-d227eddf1851",
+  "version": "2.4.6",
+  "isNew": false
+}
