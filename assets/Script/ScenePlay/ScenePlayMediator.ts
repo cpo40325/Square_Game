@@ -113,17 +113,19 @@ export default class ScenePlayMediator extends KYPureMediator {
         let proxy: GameProxy = this.getFacade().retrieveProxy(GameProxy.NAME);
 
 
-        for (let i = 0; i < proxy.total; i++) {
+        for (let i = 1; i <= proxy.total; i++) {
 
 
             let node = cc.instantiate(this.getComponent().squarePrefab);
 
             let square: Square = node.getComponent("Square");
 
-            square.no = i + 1;
+            square.no = i;
 
             node.setPosition(480 - Math.random()*960, 320 - Math.random()*640    );
-            this.getComponent().node.addChild(node);
+            node.zIndex = proxy.total - i;
+            this.getComponent().node.getChildByName("Layout").addChild(node);
+            
             this.squareArray.unshift(square);
         }
 
